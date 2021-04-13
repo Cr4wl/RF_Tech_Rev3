@@ -255,6 +255,11 @@
         TurnTable21.BackColor = Color.White
         TurnTable21.Location = New Point(0, TopMenu1.Height)
         TurnTable21.Size = New Size(Me.Width, Me.Height - TopMenu1.Height - BottomMenu1.Height)
+
+        ' Spectrum Analyzer Menu
+        SpecMenu1.BackColor = Color.White
+        SpecMenu1.Location = New Point(0, TopMenu1.Height)
+        SpecMenu1.Size = New Size(Me.Width, Me.Height - TopMenu1.Height - BottomMenu1.Height)
     End Sub
 
     Private Sub Button_SpectrumAnalizer_Click(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.Click
