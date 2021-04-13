@@ -171,6 +171,7 @@
         TurnTable1.Visible = False
         Settings1.Visible = False
         TurnTable21.Visible = False
+        SpecMenu1.Visible = False
     End Sub
 
     Private Sub Button_TurnTable_Click(sender As Object, e As EventArgs) Handles Button_TurnTable.Click
@@ -257,7 +258,8 @@
     End Sub
 
     Private Sub Button_SpectrumAnalizer_Click(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.Click
-
+        SpecMenu1.BringToFront()
+        SpecMenu1.Visible = True
     End Sub
 
     Private Sub Button_SpectrumAnalizer_MouseEnter(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.MouseEnter

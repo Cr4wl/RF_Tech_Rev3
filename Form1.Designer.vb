@@ -34,6 +34,7 @@ Partial Class Form1
         Me.BottomMenu1 = New RF_Tech_Rev3.BottomMenu()
         Me.TurnTable1 = New RF_Tech_Rev3.TurnTable()
         Me.TopMenu1 = New RF_Tech_Rev3.TopMenu()
+        Me.SpecMenu1 = New RF_Tech_Rev3.SpecMenu()
         Me.SuspendLayout()
         '
         'Button_TurnTable
@@ -97,11 +98,19 @@ Partial Class Form1
         Me.TopMenu1.Size = New System.Drawing.Size(424, 56)
         Me.TopMenu1.TabIndex = 2
         '
+        'SpecMenu1
+        '
+        Me.SpecMenu1.Location = New System.Drawing.Point(72, 224)
+        Me.SpecMenu1.Name = "SpecMenu1"
+        Me.SpecMenu1.Size = New System.Drawing.Size(112, 56)
+        Me.SpecMenu1.TabIndex = 8
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.SpecMenu1)
         Me.Controls.Add(Me.TurnTable21)
         Me.Controls.Add(Me.Settings1)
         Me.Controls.Add(Me.BottomMenu1)
@@ -127,4 +136,5 @@ Partial Class Form1
     Friend WithEvents ColorDialog1 As ColorDialog
     Friend WithEvents TurnTable21 As TurnTable2
     Friend WithEvents Serial_TurnTable As IO.Ports.SerialPort
+    Friend WithEvents SpecMenu1 As SpecMenu
 End Class

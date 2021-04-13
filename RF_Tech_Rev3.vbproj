@@ -107,6 +107,12 @@
     <Compile Include="Settings.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SpecMenu.Designer.vb">
+      <DependentUpon>SpecMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpecMenu.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="TopMenu.Designer.vb">
       <DependentUpon>TopMenu.vb</DependentUpon>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecMenu.resx">
+      <DependentUpon>SpecMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopMenu.resx">
       <DependentUpon>TopMenu.vb</DependentUpon>
