@@ -28,8 +28,8 @@
     Dim dist As Single = 0
     Dim steps As Single = 0
     Dim step_inc As Single = 0
-    Dim rotate As Single = 0
-    Dim read As Single
+    Public rotate As Single = 0
+    'Dim read As Single
 
     ' Top and Bottom Menu Background
     Public Colour_Menu_Background = Color.FromArgb(50, 57, 70)
@@ -289,12 +289,12 @@
         If serial_string.Length >= 3 Then
             serial_substr = serial_string.Substring(serial_string.IndexOf(":"c) + 1)
             degrees = Math.Round(Convert.ToSingle(serial_substr) / 5, 0) * 5
-            read = Math.Round(Convert.ToSingle(serial_substr), 0)
+            'read = Math.Round(Convert.ToSingle(serial_substr), 0)
             TurnTable21.Text_TurnTable.Text = Math.Round(Convert.ToSingle(serial_substr), 0)
 
-            steps = read - dist
-            step_inc = steps - step_inc
-            If Math.Abs(step_inc) > 1 Then
+            steps = degrees - dist 'read - dist
+            step_inc = Math.Abs(steps - step_inc)
+            If step_inc > 5 Then
                 step_inc = 0
             End If
             rotate += step_inc
@@ -332,6 +332,7 @@
             TurnTable21.Button2.FlatAppearance.BorderColor = Colour_TurnTable_Button_Hover
             TurnTable21.Button2.FlatAppearance.BorderSize = 1
             TurnTable21.g2.DrawImage(TurnTable21.img2, 0, 0, TurnTable21.dial2const, TurnTable21.dial2const)
+            rotate = 0
             Timer1.Stop()
         Else
             check = serial_string

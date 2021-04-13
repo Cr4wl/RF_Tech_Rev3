@@ -278,7 +278,7 @@
         Text_TurnTable.Location = New Point((Image_TurnTable_Dial.Width - Text_TurnTable.Width) / 2 + ((Image_TurnTable_Dial.Width - Text_TurnTable.Width) / 2) / 50, (Image_TurnTable_Dial.Height - Text_TurnTable.Height) / 2)
 
     End Sub
-    Private Sub Text_Turned_SizeChanged(sender As Object, e As EventArgs) 
+    Private Sub Text_Turned_SizeChanged(sender As Object, e As EventArgs) Handles Text_Turned.SizeChanged
         Text_Turned.Location = New Point((Image_TurnTable_Dial.Width - Text_Turned.Width) / 2 + ((Image_TurnTable_Dial.Width - Text_Turned.Width) / 2) / 100, (Text_TurnTable.Location.Y + Text_TurnTable.Height))
     End Sub
 
@@ -336,7 +336,7 @@
             Form1.Serial_TurnTable.Open()
             Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
             Form1.Serial_TurnTable.Close()
-
+            Form1.rotate = 0
             Form1.Timer1.Stop()
             g2.DrawImage(img2, 0, 0, dial2const, dial2const)
         End If
@@ -372,7 +372,7 @@
                 Form1.Serial_TurnTable.Close()
                 g2.DrawImage(img2, 0, 0, dial2const, dial2const)
                 Form1.Timer1.Stop()
-
+                Form1.rotate = 0
                 distanceTurned = Math.Round(Convert.ToSingle(Form1.serial_substr), 0)
 
                 Button2.Text = "Full"
@@ -454,7 +454,7 @@
             Form1.Serial_TurnTable.Open()
             Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
             Form1.Serial_TurnTable.Close()
-
+            Form1.rotate = 0
             Form1.Timer1.Stop()
             g2.DrawImage(img2, 0, 0, dial2const, dial2const)
         End If
@@ -668,5 +668,4 @@
         'Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
         'Form1.Serial_TurnTable.Close()
     End Sub
-
 End Class

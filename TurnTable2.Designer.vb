@@ -23,6 +23,7 @@ Partial Class TurnTable2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Image_TurnTable_Dial = New System.Windows.Forms.Panel()
+        Me.Text_Turned = New System.Windows.Forms.Label()
         Me.Eraser = New System.Windows.Forms.Button()
         Me.Text_TurnTable = New System.Windows.Forms.Label()
         Me.Pen = New System.Windows.Forms.Button()
@@ -38,7 +39,6 @@ Partial Class TurnTable2
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Group_Direction = New System.Windows.Forms.GroupBox()
-        Me.Text_Turned = New System.Windows.Forms.Label()
         Me.Image_TurnTable_Dial.SuspendLayout()
         Me.Group_Speed.SuspendLayout()
         Me.Group_Step.SuspendLayout()
@@ -55,6 +55,15 @@ Partial Class TurnTable2
         Me.Image_TurnTable_Dial.Name = "Image_TurnTable_Dial"
         Me.Image_TurnTable_Dial.Size = New System.Drawing.Size(200, 164)
         Me.Image_TurnTable_Dial.TabIndex = 2
+        '
+        'Text_Turned
+        '
+        Me.Text_Turned.AutoSize = True
+        Me.Text_Turned.Location = New System.Drawing.Point(80, 88)
+        Me.Text_Turned.Name = "Text_Turned"
+        Me.Text_Turned.Size = New System.Drawing.Size(71, 13)
+        Me.Text_Turned.TabIndex = 11
+        Me.Text_Turned.Text = "turn table text"
         '
         'Eraser
         '
@@ -199,15 +208,6 @@ Partial Class TurnTable2
         Me.Group_Direction.TabIndex = 6
         Me.Group_Direction.TabStop = False
         Me.Group_Direction.Text = "GroupBox1"
-        '
-        'Text_Turned
-        '
-        Me.Text_Turned.AutoSize = True
-        Me.Text_Turned.Location = New System.Drawing.Point(80, 88)
-        Me.Text_Turned.Name = "Text_Turned"
-        Me.Text_Turned.Size = New System.Drawing.Size(71, 13)
-        Me.Text_Turned.TabIndex = 11
-        Me.Text_Turned.Text = "turn table text"
         '
         'TurnTable2
         '
