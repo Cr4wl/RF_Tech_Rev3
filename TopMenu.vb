@@ -3,10 +3,13 @@
     Dim Font_TurnTable_Colour = Color.FromArgb(36, 163, 216)
     Dim Colour_TurnTable_Button_Pressed = Color.FromArgb(16, 143, 196)
     Private Sub Button_Form_Minimize_Click(sender As Object, e As EventArgs) Handles Button_Form_Minimize.Click
-        Form1.Serial_TurnTable.Open()
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
-        Form1.Serial_TurnTable.Close()
+        Try
+            Form1.Serial_TurnTable.Open()
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
+            Form1.Serial_TurnTable.Close()
+        Catch
+        End Try
 
         Form1.degdelta = 0
 
@@ -15,10 +18,13 @@
     End Sub
 
     Private Sub Button_Form_Resize_Click(sender As Object, e As EventArgs) Handles Button_Form_Resize.Click
-        Form1.Serial_TurnTable.Open()
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
-        Form1.Serial_TurnTable.Close()
+        Try
+            Form1.Serial_TurnTable.Open()
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
+            Form1.Serial_TurnTable.Close()
+        Catch
+        End Try
 
         Form1.degdelta = 0
 
@@ -30,10 +36,13 @@
     End Sub
 
     Private Sub Button_Form_Close_Click(sender As Object, e As EventArgs) Handles Button_Form_Close.Click
-        Form1.Serial_TurnTable.Open()
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
-        Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
-        Form1.Serial_TurnTable.Close()
+        Try
+            Form1.Serial_TurnTable.Open()
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:A" + Chr(13))
+            Form1.Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
+            Form1.Serial_TurnTable.Close()
+        Catch
+        End Try
 
         Form1.Close()
     End Sub

@@ -39,17 +39,18 @@ Partial Class TurnTable2
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Group_Direction = New System.Windows.Forms.GroupBox()
+        Me.Image_TurnTable_InnerDial = New System.Windows.Forms.Panel()
         Me.Image_TurnTable_Dial.SuspendLayout()
         Me.Group_Speed.SuspendLayout()
         Me.Group_Step.SuspendLayout()
         Me.Group_Direction.SuspendLayout()
+        Me.Image_TurnTable_InnerDial.SuspendLayout()
         Me.SuspendLayout()
         '
         'Image_TurnTable_Dial
         '
-        Me.Image_TurnTable_Dial.Controls.Add(Me.Text_Turned)
+        Me.Image_TurnTable_Dial.Controls.Add(Me.Image_TurnTable_InnerDial)
         Me.Image_TurnTable_Dial.Controls.Add(Me.Eraser)
-        Me.Image_TurnTable_Dial.Controls.Add(Me.Text_TurnTable)
         Me.Image_TurnTable_Dial.Controls.Add(Me.Pen)
         Me.Image_TurnTable_Dial.Location = New System.Drawing.Point(272, 16)
         Me.Image_TurnTable_Dial.Name = "Image_TurnTable_Dial"
@@ -59,7 +60,7 @@ Partial Class TurnTable2
         'Text_Turned
         '
         Me.Text_Turned.AutoSize = True
-        Me.Text_Turned.Location = New System.Drawing.Point(80, 88)
+        Me.Text_Turned.Location = New System.Drawing.Point(8, 24)
         Me.Text_Turned.Name = "Text_Turned"
         Me.Text_Turned.Size = New System.Drawing.Size(71, 13)
         Me.Text_Turned.TabIndex = 11
@@ -77,7 +78,7 @@ Partial Class TurnTable2
         'Text_TurnTable
         '
         Me.Text_TurnTable.AutoSize = True
-        Me.Text_TurnTable.Location = New System.Drawing.Point(80, 72)
+        Me.Text_TurnTable.Location = New System.Drawing.Point(0, 8)
         Me.Text_TurnTable.Name = "Text_TurnTable"
         Me.Text_TurnTable.Size = New System.Drawing.Size(71, 13)
         Me.Text_TurnTable.TabIndex = 2
@@ -209,6 +210,15 @@ Partial Class TurnTable2
         Me.Group_Direction.TabStop = False
         Me.Group_Direction.Text = "GroupBox1"
         '
+        'Image_TurnTable_InnerDial
+        '
+        Me.Image_TurnTable_InnerDial.Controls.Add(Me.Text_TurnTable)
+        Me.Image_TurnTable_InnerDial.Controls.Add(Me.Text_Turned)
+        Me.Image_TurnTable_InnerDial.Location = New System.Drawing.Point(64, 48)
+        Me.Image_TurnTable_InnerDial.Name = "Image_TurnTable_InnerDial"
+        Me.Image_TurnTable_InnerDial.Size = New System.Drawing.Size(64, 56)
+        Me.Image_TurnTable_InnerDial.TabIndex = 12
+        '
         'TurnTable2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -220,10 +230,11 @@ Partial Class TurnTable2
         Me.Name = "TurnTable2"
         Me.Size = New System.Drawing.Size(475, 352)
         Me.Image_TurnTable_Dial.ResumeLayout(False)
-        Me.Image_TurnTable_Dial.PerformLayout()
         Me.Group_Speed.ResumeLayout(False)
         Me.Group_Step.ResumeLayout(False)
         Me.Group_Direction.ResumeLayout(False)
+        Me.Image_TurnTable_InnerDial.ResumeLayout(False)
+        Me.Image_TurnTable_InnerDial.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -245,4 +256,5 @@ Partial Class TurnTable2
     Friend WithEvents Pen As Button
     Friend WithEvents Eraser As Button
     Friend WithEvents Text_Turned As Label
+    Friend WithEvents Image_TurnTable_InnerDial As Panel
 End Class

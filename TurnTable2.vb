@@ -158,6 +158,8 @@
         Image_TurnTable_Dial.Location = New Point((Me.Width - Image_TurnTable_Dial.Width) * 9 / 10, (Me.Height - Image_TurnTable_Dial.Height) / 2)
         Image_TurnTable_Dial.BackgroundImage = System.Drawing.Image.FromFile("C:\Users\Safety\Documents\VBA Projects\Resources\Rev3\Turn Table\TurnTable.png")
         Image_TurnTable_Dial.BackgroundImageLayout = BackgroundImageLayout.Zoom
+        Image_TurnTable_InnerDial.Size = New Size(Image_TurnTable_Dial.Width / 2.15, Image_TurnTable_Dial.Height / 2.15)
+        Image_TurnTable_InnerDial.Location = New Point((Image_TurnTable_Dial.Width - Image_TurnTable_InnerDial.Width) / 2, (Image_TurnTable_Dial.Height - Image_TurnTable_InnerDial.Height) / 2)
 
         ' Set size and location of groupboxes and buttons
         Button_TurnTable_Turn_Size = New Size(Me.Width / 12, Me.Width / 12)
@@ -237,14 +239,14 @@
         ' Declare the graphics to be drawn in the turn table image panel
         g = Image_TurnTable_Dial.CreateGraphics
         g2 = Image_TurnTable_Dial.CreateGraphics
-        g3 = Image_TurnTable_Dial.CreateGraphics
+        g3 = Image_TurnTable_InnerDial.CreateGraphics
         img = Bitmap.FromFile("C:\Users\Safety\Documents\VBA Projects\Resources\Rev3\Turn Table\Dial.png")
         img2 = Bitmap.FromFile("C:\Users\Safety\Documents\VBA Projects\Resources\Rev3\Turn Table\Dial2.png")
         img3 = Bitmap.FromFile("C:\Users\Safety\Documents\VBA Projects\Resources\Rev3\Turn Table\Dial3.png")
 
         ' Determine the size of the dial for the turn table image
         r = (Math.Sqrt(2 * ((Image_TurnTable_Dial.Width / 2) ^ 2)) / 2) - (Image_TurnTable_Dial.Width / 52)
-        r2 = r / 1.5
+        r2 = (Math.Sqrt(2 * ((Image_TurnTable_InnerDial.Width / 2) ^ 2)) / 2) - (Image_TurnTable_InnerDial.Width / 52) 'r / 1.5
         dial2const = r * 1.03
 
         ' Position the dial in the centre of the turn table image
@@ -252,7 +254,7 @@
         g.RotateTransform(-45)
         g2.TranslateTransform(Image_TurnTable_Dial.Width / 2, Image_TurnTable_Dial.Height / 2)
         g2.RotateTransform(-45)
-        g3.TranslateTransform(Image_TurnTable_Dial.Width / 2, Image_TurnTable_Dial.Height / 2)
+        g3.TranslateTransform(Image_TurnTable_InnerDial.Width / 2, Image_TurnTable_InnerDial.Height / 2)
         g3.RotateTransform(-45)
 
         ' Turn table image panel text size and style declaration
@@ -274,12 +276,15 @@
         Text_Turned.TextAlign = ContentAlignment.MiddleCenter
     End Sub
 
-    Private Sub Text_TurnTable_SizeChanged(sender As Object, e As EventArgs) Handles Text_TurnTable.SizeChanged
-        Text_TurnTable.Location = New Point((Image_TurnTable_Dial.Width - Text_TurnTable.Width) / 2 + ((Image_TurnTable_Dial.Width - Text_TurnTable.Width) / 2) / 50, (Image_TurnTable_Dial.Height - Text_TurnTable.Height) / 2)
+    Private Sub Image_TurnTable_InnerDial_SizeChanged(sender As Object, e As EventArgs) Handles Image_TurnTable_InnerDial.SizeChanged
 
     End Sub
+
+    Private Sub Text_TurnTable_SizeChanged(sender As Object, e As EventArgs) Handles Text_TurnTable.SizeChanged
+        Text_TurnTable.Location = New Point((Image_TurnTable_InnerDial.Width - Text_TurnTable.Width) / 2 + ((Image_TurnTable_InnerDial.Width - Text_TurnTable.Width) / 2) / 50, (Image_TurnTable_InnerDial.Height - Text_TurnTable.Height) / 2)
+    End Sub
     Private Sub Text_Turned_SizeChanged(sender As Object, e As EventArgs) Handles Text_Turned.SizeChanged
-        Text_Turned.Location = New Point((Image_TurnTable_Dial.Width - Text_Turned.Width) / 2 + ((Image_TurnTable_Dial.Width - Text_Turned.Width) / 2) / 100, (Text_TurnTable.Location.Y + Text_TurnTable.Height))
+        Text_Turned.Location = New Point((Image_TurnTable_InnerDial.Width - Text_Turned.Width) / 2 + ((Image_TurnTable_InnerDial.Width - Text_Turned.Width) / 2) / 100, (Text_TurnTable.Location.Y + Text_TurnTable.Height))
     End Sub
 
     '''''' From here the turn table buttons are configured to display correctly after being clicked and hovered upon ''''''

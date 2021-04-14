@@ -44,15 +44,17 @@
     Dim Font_TurnTable_Colour = Color.FromArgb(36, 163, 216)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Open Serial Port to Turn Table
-        Serial_TurnTable.PortName = "COM" + Settings1.Set_SerialPort.Text
-        Serial_TurnTable.BaudRate = "115200"
+        Try
+            ' Open Serial Port to Turn Table
+            Serial_TurnTable.PortName = "COM" + Settings1.Set_SerialPort.Text
+            Serial_TurnTable.BaudRate = "115200"
 
-        ' Turn Table default values
-        Serial_TurnTable.Open()
-        Serial_TurnTable.Write(Chr(2) + "TT:SET:ma=200" + Chr(13))
-        Serial_TurnTable.Close()
-
+            ' Turn Table default values
+            Serial_TurnTable.Open()
+            Serial_TurnTable.Write(Chr(2) + "TT:SET:ma=200" + Chr(13))
+            Serial_TurnTable.Close()
+        Catch
+        End Try
         ''''''''''''
         'TurnTable21.Text_Turned.Visible = False
 
@@ -180,9 +182,12 @@
 
         MenuSelected = "TurnTable"
 
-        Serial_TurnTable.Open()
-        Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
-        Serial_TurnTable.Close()
+        Try
+            Serial_TurnTable.Open()
+            Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
+            Serial_TurnTable.Close()
+        Catch
+        End Try
 
         If Settings1.Layout_Selection = 1 Then
             TurnTable1.Visible = True
