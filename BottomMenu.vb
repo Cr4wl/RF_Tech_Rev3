@@ -8,6 +8,8 @@
     ' Button font declaration
     Dim Button_Font As Font = New Font("Ubuntu", 10, FontStyle.Regular)
 
+    Public BotMenuSelected As String = ""
+
     Private Sub BottomMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Declare flat style and button text
         ' Settings
@@ -85,6 +87,7 @@
     End Sub
 
     Private Sub Settings_Click(sender As Object, e As EventArgs) Handles Settings.Click
+        BotMenuSelected = "Settings"
         Form1.Settings1.Visible = True
         Form1.Settings1.BringToFront()
         Form1.TopMenu1.Button_Form_GoBack.Visible = True

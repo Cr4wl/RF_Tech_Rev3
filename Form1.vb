@@ -11,6 +11,7 @@
     Public Colour_Menu_Button_Normal = Color.Transparent
     Public Colour_Menu_Button_Hover = Color.FromArgb(60, 67, 80)
     Public Colour_Menu_Button_Pressed = Color.FromArgb(70, 77, 90)
+    Public MenuSelected As String = ""
 
     ' Turn table buttons
     Dim Colour_TurnTable_Button_Normal = Color.Transparent
@@ -175,7 +176,9 @@
     End Sub
 
     Private Sub Button_TurnTable_Click(sender As Object, e As EventArgs) Handles Button_TurnTable.Click
-        TurnTable1.BringToFront()
+        TurnTable21.BringToFront()
+
+        MenuSelected = "TurnTable"
 
         Serial_TurnTable.Open()
         Serial_TurnTable.Write(Chr(2) + "TT:S:h" + Chr(13))
@@ -263,8 +266,11 @@
     End Sub
 
     Private Sub Button_SpectrumAnalizer_Click(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.Click
+        MenuSelected = "Spectrum"
+
         SpecMenu1.BringToFront()
         SpecMenu1.Visible = True
+        TopMenu1.Button_Form_GoBack.Visible = True
     End Sub
 
     Private Sub Button_SpectrumAnalizer_MouseEnter(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.MouseEnter
@@ -294,10 +300,13 @@
         serial_string = Serial_TurnTable.ReadLine
 
         If serial_string.Length >= 3 Then
-            serial_substr = serial_string.Substring(serial_string.IndexOf(":"c) + 1)
-            degrees = Math.Round(Convert.ToSingle(serial_substr) / 5, 0) * 5
-            'read = Math.Round(Convert.ToSingle(serial_substr), 0)
-            TurnTable21.Text_TurnTable.Text = Math.Round(Convert.ToSingle(serial_substr), 0)
+            Try
+                serial_substr = serial_string.Substring(serial_string.IndexOf(":"c) + 1)
+                degrees = Math.Round(Convert.ToSingle(serial_substr) / 5, 0) * 5
+                'read = Math.Round(Convert.ToSingle(serial_substr), 0)
+                TurnTable21.Text_TurnTable.Text = Math.Round(Convert.ToSingle(serial_substr), 0)
+            Catch
+            End Try
 
             steps = degrees - dist 'read - dist
             step_inc = Math.Abs(steps - step_inc)
