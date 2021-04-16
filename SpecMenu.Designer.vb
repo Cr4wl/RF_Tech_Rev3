@@ -24,6 +24,8 @@ Partial Class SpecMenu
     Private Sub InitializeComponent()
         Me.NewTest = New System.Windows.Forms.Button()
         Me.AddTest = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'NewTest
@@ -44,6 +46,10 @@ Partial Class SpecMenu
         Me.AddTest.Text = "Button2"
         Me.AddTest.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'SpecMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -57,4 +63,6 @@ Partial Class SpecMenu
 
     Friend WithEvents NewTest As Button
     Friend WithEvents AddTest As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

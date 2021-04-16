@@ -175,6 +175,7 @@
         Settings1.Visible = False
         TurnTable21.Visible = False
         SpecMenu1.Visible = False
+        'NewTest1.Visible = False
     End Sub
 
     Private Sub Button_TurnTable_Click(sender As Object, e As EventArgs) Handles Button_TurnTable.Click
@@ -268,6 +269,12 @@
         SpecMenu1.BackColor = Color.White
         SpecMenu1.Location = New Point(0, TopMenu1.Height)
         SpecMenu1.Size = New Size(Me.Width, Me.Height - TopMenu1.Height - BottomMenu1.Height)
+
+        ' New Test
+        NewTest1.BackColor = Color.White
+        NewTest1.Location = New Point(0, TopMenu1.Height)
+        NewTest1.Size = New Size(Me.Width, Me.Height - TopMenu1.Height - BottomMenu1.Height)
+
     End Sub
 
     Private Sub Button_SpectrumAnalizer_Click(sender As Object, e As EventArgs) Handles Button_SpectrumAnalizer.Click

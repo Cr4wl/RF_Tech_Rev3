@@ -29,12 +29,13 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.Serial_TurnTable = New System.IO.Ports.SerialPort(Me.components)
+        Me.SpecMenu1 = New RF_Tech_Rev3.SpecMenu()
         Me.TurnTable21 = New RF_Tech_Rev3.TurnTable2()
         Me.Settings1 = New RF_Tech_Rev3.Settings()
         Me.BottomMenu1 = New RF_Tech_Rev3.BottomMenu()
         Me.TurnTable1 = New RF_Tech_Rev3.TurnTable()
         Me.TopMenu1 = New RF_Tech_Rev3.TopMenu()
-        Me.SpecMenu1 = New RF_Tech_Rev3.SpecMenu()
+        Me.NewTest1 = New RF_Tech_Rev3.NewTest()
         Me.SuspendLayout()
         '
         'Button_TurnTable
@@ -63,16 +64,23 @@ Partial Class Form1
         'Timer1
         '
         '
+        'SpecMenu1
+        '
+        Me.SpecMenu1.Location = New System.Drawing.Point(392, 80)
+        Me.SpecMenu1.Name = "SpecMenu1"
+        Me.SpecMenu1.Size = New System.Drawing.Size(112, 56)
+        Me.SpecMenu1.TabIndex = 8
+        '
         'TurnTable21
         '
-        Me.TurnTable21.Location = New System.Drawing.Point(200, 168)
+        Me.TurnTable21.Location = New System.Drawing.Point(64, 176)
         Me.TurnTable21.Name = "TurnTable21"
         Me.TurnTable21.Size = New System.Drawing.Size(171, 120)
         Me.TurnTable21.TabIndex = 7
         '
         'Settings1
         '
-        Me.Settings1.Location = New System.Drawing.Point(600, 80)
+        Me.Settings1.Location = New System.Drawing.Point(464, 304)
         Me.Settings1.Name = "Settings1"
         Me.Settings1.Size = New System.Drawing.Size(152, 104)
         Me.Settings1.TabIndex = 6
@@ -98,18 +106,19 @@ Partial Class Form1
         Me.TopMenu1.Size = New System.Drawing.Size(424, 56)
         Me.TopMenu1.TabIndex = 2
         '
-        'SpecMenu1
+        'NewTest1
         '
-        Me.SpecMenu1.Location = New System.Drawing.Point(72, 224)
-        Me.SpecMenu1.Name = "SpecMenu1"
-        Me.SpecMenu1.Size = New System.Drawing.Size(112, 56)
-        Me.SpecMenu1.TabIndex = 8
+        Me.NewTest1.Location = New System.Drawing.Point(320, 136)
+        Me.NewTest1.Name = "NewTest1"
+        Me.NewTest1.Size = New System.Drawing.Size(64, 64)
+        Me.NewTest1.TabIndex = 9
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.NewTest1)
         Me.Controls.Add(Me.SpecMenu1)
         Me.Controls.Add(Me.TurnTable21)
         Me.Controls.Add(Me.Settings1)
@@ -137,4 +146,5 @@ Partial Class Form1
     Friend WithEvents TurnTable21 As TurnTable2
     Friend WithEvents Serial_TurnTable As IO.Ports.SerialPort
     Friend WithEvents SpecMenu1 As SpecMenu
+    Friend WithEvents NewTest1 As NewTest
 End Class

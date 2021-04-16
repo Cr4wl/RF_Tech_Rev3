@@ -1,8 +1,6 @@
 ﻿Public Class SpecMenu
-
-    Dim Colour_TurnTable_Button_Hover = Color.FromArgb(36, 163, 216)
-    Dim Colour_TurnTable_Button_Pressed = Color.FromArgb(16, 143, 196)
-
+    Public SpecMenuSelected As String = ""
+    Public FileLocation As String
     Private Sub SpecMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' New Test Button
         NewTest.Text = ""
@@ -40,7 +38,20 @@
     End Sub
 
     Private Sub NewTest_Click(sender As Object, e As EventArgs) Handles NewTest.Click
+        SpecMenuSelected = "NewTest"
+        SaveFileDialog1.DefaultExt = ".cfg"
+        SaveFileDialog1.AddExtension = True
+        SaveFileDialog1.Filter = "New Test Configuration Files (*.cfg)|*.cfg"
+        'SaveFileDialog1.ShowDialog()
+        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If SaveFileDialog1.FileName <> "" Then
+                FileLocation = SaveFileDialog1.FileName
+                My.Computer.FileSystem.WriteAllText(FileLocation, "First entry of a new test started on: " & vbNewLine & Date.Now & vbNewLine & vbNewLine, True)
+            End If
+        End If
 
+        Form1.NewTest1.Visible = True
+        Form1.NewTest1.BringToFront()
     End Sub
 
     Private Sub NewTest_MouseEnter(sender As Object, e As EventArgs) Handles NewTest.MouseEnter
@@ -60,7 +71,14 @@
     End Sub
 
     Private Sub AddTest_Click(sender As Object, e As EventArgs) Handles AddTest.Click
+        SpecMenuSelected = "AddTest"
+        OpenFileDialog1.Filter = "New Test Configuration Files (*.cfg)|*.cfg"
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            FileLocation = OpenFileDialog1.FileName
+        End If
 
+        Form1.NewTest1.Visible = True
+        Form1.NewTest1.BringToFront()
     End Sub
 
     Private Sub AddTest_MouseDown(sender As Object, e As MouseEventArgs) Handles AddTest.MouseDown
